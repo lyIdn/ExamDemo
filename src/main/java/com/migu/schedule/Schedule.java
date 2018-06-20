@@ -1,5 +1,6 @@
 package com.migu.schedule;
 
+
 import com.migu.schedule.constants.ReturnCodeKeys;
 import com.migu.schedule.info.ConsumptionInfo;
 import com.migu.schedule.info.TaskInfo;
@@ -143,6 +144,9 @@ public class Schedule {
         int nodeSize = nodeServers.size();
         int[] consumptions = new int[nodeSize];
         TreeSet<ConsumptionInfo>[] cpis = new TreeSet[nodeSize];
+        for (int i = 0; i< nodeSize; i++) {
+            cpis[i] = new TreeSet<ConsumptionInfo>();
+        }
 
         TreeMap<Integer, TreeSet<ConsumptionInfo>> nodeServersBak = new TreeMap<Integer, TreeSet<ConsumptionInfo>>();
         int idx = 0;
